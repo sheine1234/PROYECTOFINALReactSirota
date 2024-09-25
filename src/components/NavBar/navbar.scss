@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #191E3A;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: white;
+    font-weight: 500;
+    
+    &:hover {
+        color:#D9573C;
+    }
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); // Bordes del botón de navegación
+}
+
+
+.cartwidget {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f8f9fa; // Cambia este color si lo deseas
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #e2e6ea; // Cambia este color si lo deseas
+    }
+
+    p {
+        margin: 0;
+    }
+}
