@@ -1,0 +1,52 @@
+.item-detail-container {
+    max-width: 600px;
+    margin: 20px auto;
+  
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+  
+      .card-img-top {
+        height: 300px; // Ajusta según tu diseño
+        object-fit: cover;
+      }
+  
+      .card-body {
+        h2.card-title {
+          font-size: 1.8em;
+          color: #343a40;
+        }
+  
+        p.card-price {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #007bff; // Color del precio
+        }
+  
+        .description-container {
+          margin: 15px 0; // Espacio entre la descripción y otros elementos
+          h3.description-title {
+            font-size: 1.5em;
+            color: #343a40; // Color del título de la descripción
+            margin-bottom: 10px; // Espacio debajo del título
+          }
+  
+          p.card-text {
+            font-size: 1.2em;
+            color: #6c757d; // Color del texto de la descripción
+          }
+        }
+  
+        .btn-primary {
+          width: 100%; // Botón ocupa el ancho completo
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #0056b3; // Color al pasar el mouse
+            border-color: #004085;
+          }
+        }
+      }
+    }
+  }
+  

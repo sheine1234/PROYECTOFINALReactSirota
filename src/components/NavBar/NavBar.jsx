@@ -1,12 +1,15 @@
 import CartWidget from "./CartWidget";
 import logo from "../../assets/logo.jpg";
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <img src={logo} alt="Logo" width={80} />
+                <Link to="/">
+                    <img src={logo} alt="Logo" width={80} />
+                </Link>
                 <button 
                     className="navbar-toggler" 
                     type="button" 
@@ -21,13 +24,16 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link " aria-current="page" href="#">Menú</a>
+                            <Link className="nav-link" to="/">Menú</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Iniciar Sesión</a>
+                            <Link className="nav-link" to="/category/Fast Food">Fast Food</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About Us</a>
+                            <Link className="nav-link" to="/category/Saludable">Saludable</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/category/Especialidades">Especialidades</Link>
                         </li>
                         <li className="nav-item">
                             <CartWidget />

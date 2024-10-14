@@ -1,0 +1,51 @@
+
+.menu {
+    display: flex;                /* Usar flexbox para el contenedor */
+    flex-wrap: wrap;             /* Permitir que los items se ajusten en varias líneas */
+    justify-content: space-between; /* Espacio entre items */
+    margin: 0 -15px;             /* Espacio negativo para alinear correctamente los márgenes */
+}
+
+.menu-item {
+    margin: 15px;                /* Margen para cada item */
+    flex: 1 1 calc(33.333% - 30px); /* Ajustar cada item a un tercio del ancho disponible, menos el margen */
+    box-sizing: border-box;      /* Incluir el padding y el border en el cálculo del ancho */
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: #343a40;
+}
+
+.card-text {
+    font-size: 1.2em;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+  
