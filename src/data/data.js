@@ -5,7 +5,7 @@ const products = [
         price: 3000, 
         category: "Fast Food", 
         image: "../images/hamburguesa_clasica.jpg", 
-        stock: 50,
+        stock: 10,
         description: "Deliciosa hamburguesa con carne 100% vacuna, lechuga, tomate y mayonesa."
     },
     { 
