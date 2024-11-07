@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
-import { getProduct } from "../../data/data.js"
 import ItemDetail from "./ItemDetail.jsx"
 import { useParams } from "react-router-dom"
 import { useContext } from "react"
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../db/db.js"
 import { CartContext } from "../../context/CartContext.jsx"
 
 const ItemDetailContainer = () => {
@@ -18,11 +19,19 @@ const ItemDetailContainer = () => {
     // Estado para mostrar o ocultar item count
     setHideItemCount(true)
   }
-    
-    useEffect( ()=>{
-        getProduct(idProduct)
-        .then((data)=>setProduct(data))
+
+  const getProduct = () => {
+    const docRef = doc( db, "menu", idProduct)
+    getDoc(docRef)
+    .then((dataDb)=>{
+      const productDb = { id: dataDb.id, ...dataDb.data() }
+      setProduct(productDb)
     })
+  }
+    
+  useEffect( ()=>{
+    getProduct()
+  }, [idProduct])
 
   return (
     <ItemDetail product={product} addProduct={addProduct} hideItemCount={hideItemCount} />
