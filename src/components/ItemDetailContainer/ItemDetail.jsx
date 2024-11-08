@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-import './ItemDetail.scss'; // Asegúrate de importar el archivo SCSS
+import './itemdetail.scss'; 
 
 const ItemDetail = ({ product, addProduct, hideItemCount }) => {
   return (
@@ -17,15 +17,12 @@ const ItemDetail = ({ product, addProduct, hideItemCount }) => {
           
           {
             hideItemCount === true ? (
-              <Link to="/cart">Terminar mi compra</Link>
+              <Link to="/cart" className="button-link">Terminar mi compra</Link>
             ) : (
-              <ItemCount stock={product.stock} addProduct={addProduct}/>
+              <ItemCount stock={product.stock} addProduct={addProduct} />
             )
           }
-  
-          <button className="btn btn-primary add-to-cart">
-            Agregar al Carrito
-          </button>
+          
         </div>
       </div>
     </div>

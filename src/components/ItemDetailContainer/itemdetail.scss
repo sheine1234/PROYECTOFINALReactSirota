@@ -1,52 +1,148 @@
 .item-detail-container {
-    max-width: 600px;
-    margin: 20px auto;
-  
-    .card {
-      border-radius: 15px;
-      overflow: hidden;
-  
-      .card-img-top {
-        height: 300px; // Ajusta según tu diseño
-        object-fit: cover;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--background-color);
+
+  .card {
+    background-color: white;
+    max-width: 900px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .card-img-top {
+      width: 300px;
+      height: auto;
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 70%;
+
+      .card-title {
+        font-size: 1.8rem;
+        color: var(--secondary-color);
+        font-weight: bold;
+        margin-bottom: 10px;
       }
-  
-      .card-body {
-        h2.card-title {
-          font-size: 1.8em;
-          color: #343a40;
+
+      .card-price {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin: 10px 0;
+      }
+
+      .description-container {
+        margin-top: 20px;
+
+        .description-title {
+          font-size: 1.2rem;
+          color: var(--secondary-color);
+          font-weight: 600;
+          margin-bottom: 5px;
         }
-  
-        p.card-price {
-          font-size: 1.5em;
-          font-weight: bold;
-          color: #007bff; // Color del precio
+
+        .card-text {
+          font-size: 1rem;
+          color: #12162d;
         }
-  
-        .description-container {
-          margin: 15px 0; // Espacio entre la descripción y otros elementos
-          h3.description-title {
-            font-size: 1.5em;
-            color: #343a40; // Color del título de la descripción
-            margin-bottom: 10px; // Espacio debajo del título
-          }
-  
-          p.card-text {
-            font-size: 1.2em;
-            color: #6c757d; // Color del texto de la descripción
-          }
+      }
+
+      .button-link {
+        margin-top: 2%;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--background-color); 
+        background-color: var(--primary-color); 
+        border: none;
+        border-radius: 5px;
+        text-decoration: none; 
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: #b14732; 
+          transform: translateY(-3px); 
         }
-  
-        .btn-primary {
-          width: 100%; // Botón ocupa el ancho completo
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: #0056b3; // Color al pasar el mouse
-            border-color: #004085;
-          }
+
+        &:active {
+          background-color: #9d3f2c; 
+          transform: translateY(0); 
         }
       }
     }
   }
-  
+
+  // Media queries for responsive behavior
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-img-top {
+      width: 80%; /* Ajuste de tamaño de la imagen para pantallas pequeñas */
+      margin-right: 0;
+      margin-bottom: 20px; /* Separación entre imagen y contenido */
+    }
+
+    .card-body {
+      width: 100%; /* La sección del cuerpo de la tarjeta ocupa todo el ancho */
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.6rem; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .card-price {
+      font-size: 1.4rem; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .button-link {
+      width: 100%; /* El botón se adapta al 100% de ancho en pantallas pequeñas */
+      padding: 12px 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      max-width: 100%; /* La tarjeta ocupa todo el ancho en pantallas extra pequeñas */
+      padding: 10px;
+    }
+
+    .card-img-top {
+      width: 100%; /* La imagen ocupa todo el ancho disponible */
+    }
+
+    .card-body {
+      padding: 10px;
+    }
+
+    .card-title {
+      font-size: 1.4rem; /* Ajuste adicional para pantallas muy pequeñas */
+    }
+
+    .card-price {
+      font-size: 1.3rem; /* Ajuste adicional para pantallas muy pequeñas */
+    }
+
+    .description-container .description-title {
+      font-size: 1rem; /* Reducir tamaño de la descripción */
+    }
+
+    .card-text {
+      font-size: 0.9rem; /* Reducir tamaño de la descripción para pantallas pequeñas */
+    }
+  }
+}

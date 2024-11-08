@@ -1,21 +1,23 @@
-
 .menu {
-    display: flex;                /* Usar flexbox para el contenedor */
-    flex-wrap: wrap;             /* Permitir que los items se ajusten en varias líneas */
-    justify-content: space-between; /* Espacio entre items */
-    margin: 0 -15px;             /* Espacio negativo para alinear correctamente los márgenes */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
 }
 
 .menu-item {
-    margin: 15px;                /* Margen para cada item */
-    flex: 1 1 calc(33.333% - 30px); /* Ajustar cada item a un tercio del ancho disponible, menos el margen */
-    box-sizing: border-box;      /* Incluir el padding y el border en el cálculo del ancho */
+    margin: 15px;
+    flex: 1 1 calc(33.333% - 30px);
+    box-sizing: border-box;
 }
 
 .card {
     border: none;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 4px 8px var(--card-shadow);  // Sombra fuerte por defecto
+    transition: all 0.3s ease;  // Transición suave para los efectos
+    background-color: white;
 }
 
 .card-img-top {
@@ -24,28 +26,40 @@
 }
 
 .card-title {
-    font-size: 1.5em;
-    color: #343a40;
+    font-size: 1.6em;
+    color: var(--secondary-color);
+    font-family: 'Avenir Next Cyr', sans-serif;
+    padding: 10px;
 }
 
 .card-text {
     font-size: 1.2em;
-    color: #6c757d;
+    color: var(--text-color);
+    padding: 0 10px 15px 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);  // Efecto de levantar la tarjeta
+    box-shadow: 0 8px 16px var(--card-hover-shadow);  // Sombra más fuerte al pasar el mouse
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin: 15px;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);  // Efecto de movimiento al pasar el mouse
 }
 
 .shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    box-shadow: 0 0.125rem 0.25rem var(--card-shadow) !important;
 }
-
-  

@@ -1,0 +1,51 @@
+.item-count-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+  
+    p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color); /* Usando la variable CSS */
+      margin: 0;
+    }
+  
+    button {
+      padding: 10px 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--background-color); /* Usando la variable CSS */
+      background-color: var(--primary-color); /* Usando la variable CSS */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 0 5px;
+  
+      &:hover {
+        background-color: #b14732; /* Ajuste manual del color */
+      }
+  
+      &:disabled {
+        background-color: #f0a58f; /* Ajuste manual del color */
+        cursor: not-allowed;
+      }
+  
+      &.counter-button {
+        background-color: var(--secondary-color); /* Usando la variable CSS */
+        color: var(--background-color); /* Usando la variable CSS */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        &:hover {
+          background-color: #1f223a; /* Ajuste manual al color más claro del secundario */
+        }
+      }
+    }
+  }
+  

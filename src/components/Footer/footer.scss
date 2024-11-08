@@ -1,0 +1,68 @@
+.footer {
+    background-color: #191E3A; 
+    color: var(--background-color);
+    padding: 10px 0; // Reducir la altura agregando menos padding
+    font-size: 0.9rem; // Reducir el tamaño de la fuente
+  
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px; // Agregar espacio en los laterales
+  
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        display: flex;
+        align-items: center;
+      }
+  
+      .footer-left {
+        font-size: 0.8rem; // Tamaño de fuente más pequeño
+      }
+  
+      .footer-center {
+        font-size: 0.8rem;
+        a {
+          color: var(--background-color);
+          text-decoration: none;
+        }
+      }
+  
+      .footer-right {
+        .social-icon {
+          margin: 0 10px;
+          color: var(--background-color);
+          font-size: 1.2rem;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  
+    // Para hacer el footer más responsive
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      .footer-left, .footer-center, .footer-right {
+        margin-bottom: 10px;
+      }
+  
+      .footer-right {
+        margin-top: 10px;
+      }
+  
+      .social-icon {
+        font-size: 1.5rem; // Aumentar ligeramente el tamaño de los íconos en pantallas más pequeñas
+      }
+    }
+  }
+  
