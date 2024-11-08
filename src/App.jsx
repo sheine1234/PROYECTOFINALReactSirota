@@ -6,30 +6,34 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
+import { ToastContainer } from 'react-toastify'; // Importar ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Estilos de Toastify
 import './App.css'
 
-
 function App() {
-
   return (
-      <div className='container'>
-        <BrowserRouter>
+    <div className='container'>
+      <BrowserRouter>
         <CartProvider>
-        <NavBar />
+          <NavBar />
+          
+          {/* Contenedor de notificaciones de Toastify */}
+          <ToastContainer />
 
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting={"Bienvenido a Aieka"} />} />
-          <Route path='/category/:idCategory' element={<ItemListContainer />} />
-          <Route path='/detail/:idProduct' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/checkout' element={<Checkout />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting={"Bienvenido a Aieka"} />} />
+            <Route path='/category/:idCategory' element={<ItemListContainer />} />
+            <Route path='/detail/:idProduct' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
         </CartProvider>
-        </BrowserRouter>
-      </div>
+      </BrowserRouter>
+    </div>
   )
 }
 
 export default App
+

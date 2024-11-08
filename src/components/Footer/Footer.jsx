@@ -19,7 +19,7 @@ const Footer = () => {
             <i className="fab fa-instagram"></i>
           </a>
           <a href="https://www.aiekajesed.com/" target="_blank" rel="noopener noreferrer" className="social-icon">
-          < i class="fa-sharp fa-solid fa-globe"></i>
+          < i className="fa-sharp fa-solid fa-globe"></i>
           </a>
         </div>
       </div>
