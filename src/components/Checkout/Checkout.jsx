@@ -5,13 +5,15 @@ import FormCheckout from "./FormCheckout";
 import { CartContext } from "../../context/CartContext";
 import { Timestamp, addDoc, collection, setDoc, doc } from "firebase/firestore";
 import db from "../../db/db.js";
+import { toast } from "react-toastify";
 import "./checkout.scss";
 
 const Checkout = () => {
   const [dataForm, setDataForm] = useState({
     fullname: "",
     phone: "",
-    email: ""
+    email: "",
+    repeatEmail: ""
   });
 
   const [orderId, setOrderId] = useState(null);
@@ -29,7 +31,13 @@ const Checkout = () => {
       date: Timestamp.now(new Date()),
       total: totalPrice()
     };
-    uploadOrder(order);
+    // verificar q mail sea igaul en 2 campos
+    if( dataForm.email === dataForm.repeatEmail){
+      uploadOrder(order);
+    }else{
+      toast.error("Los emails deben coincidir")
+    }
+    
   };
 
   // Subir la orden a Firestore

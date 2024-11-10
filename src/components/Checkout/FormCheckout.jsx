@@ -29,6 +29,9 @@ const FormCheckout = ({ dataForm, handleChangeInput, handleSubmitForm }) => {
           required
         />
 
+        <label>Repetir Email:</label>
+        <input type="email" name="repeatEmail" value={dataForm.repeatEmail} onChange={handleChangeInput} />
+
         <button type="submit" className="submit-button">Enviar Orden</button>
       </form>
     </div>
